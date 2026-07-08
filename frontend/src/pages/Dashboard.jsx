@@ -1,4 +1,6 @@
 import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
+import KPICards from "../components/KPICards";
 
 export default function Dashboard() {
   return (
@@ -6,13 +8,18 @@ export default function Dashboard() {
       <Sidebar />
 
       <main className="flex-1 p-6">
-        <h1 className="text-4xl font-bold text-cyan-400">
-          KSP Crime Analytics Dashboard
-        </h1>
+        <Header />
+        <KPICards />
 
-        <p className="mt-2 text-slate-300">
-          Karnataka State Police Crime Intelligence Platform
-        </p>
+        <div className="grid grid-cols-2 gap-6">
+          <div className="bg-slate-800 rounded-xl h-96 flex items-center justify-center">
+            Network Graph
+          </div>
+
+          <div className="bg-slate-800 rounded-xl h-96 flex items-center justify-center">
+            Crime Hotspot Map
+          </div>
+        </div>
       </main>
     </div>
   );

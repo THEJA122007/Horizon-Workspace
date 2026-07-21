@@ -1,0 +1,44 @@
+{
+  "tables": [
+    {
+      "table_name": "Incidents",
+      "columns": [
+        {"column_name": "CaseMasterID", "data_type": "Integer", "is_mandatory": true},
+        {"column_name": "CrimeNo", "data_type": "VarChar", "is_mandatory": true},
+        {"column_name": "CaseNo", "data_type": "VarChar", "is_mandatory": true},
+        {"column_name": "CrimeRegistered_Date", "data_type": "DateTime", "is_mandatory": true},
+        {"column_name": "latitude", "data_type": "Double", "is_mandatory": false},
+        {"column_name": "longitude", "data_type": "Double", "is_mandatory": false},
+        {"column_name": "BriefFacts", "data_type": "LongText", "is_mandatory": false}
+      ],
+      "indexes": [
+        {"index_name": "idx_crime_reg_date", "column_name": "CrimeRegistered_Date"}
+      ]
+    },
+    {
+      "table_name": "Offenders",
+      "columns": [
+        {"column_name": "AccusedMasterID", "data_type": "Integer", "is_mandatory": true},
+        {"column_name": "CaseMasterID", "data_type": "Integer", "is_mandatory": true},
+        {"column_name": "AccusedName", "data_type": "VarChar", "is_mandatory": true},
+        {"column_name": "AgeYear", "data_type": "Integer", "is_mandatory": false},
+        {"column_name": "GenderID", "data_type": "VarChar", "is_mandatory": false},
+        {"column_name": "PersonID", "data_type": "VarChar", "is_mandatory": false},
+        {"column_name": "Mugshot_Ref", "data_type": "VarChar", "is_mandatory": false}
+      ],
+      "indexes": [
+        {"index_name": "idx_accused_master_id", "column_name": "AccusedMasterID"}
+      ]
+    },
+    {
+      "table_name": "Victims",
+      "columns": [
+        {"column_name": "VictimMasterID", "data_type": "Integer", "is_mandatory": true},
+        {"column_name": "CaseMasterID", "data_type": "Integer", "is_mandatory": true},
+        {"column_name": "VictimName", "data_type": "VarChar", "is_mandatory": true},
+        {"column_name": "AgeYear", "data_type": "Integer", "is_mandatory": false},
+        {"column_name": "GenderID", "data_type": "VarChar", "is_mandatory": false}
+      ]
+    }
+  ]
+}
